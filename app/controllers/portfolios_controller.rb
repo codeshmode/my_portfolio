@@ -3,6 +3,10 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
+
   def new
     @portfolio_item = Portfolio.new
   end
@@ -42,7 +46,7 @@ class PortfoliosController < ApplicationController
   def destroy
     #this will perform the lookup
     @portfolio_item = Portfolio.find(params[:id])
-    
+
     #this will do the destroying/delete
     @portfolio_item.destroy
 
